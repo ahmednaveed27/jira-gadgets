@@ -1,11 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs title="PMO JIRA Reopened Issues" author="Naveed Ahmed" description="Hello World example gadget" author_email="ahmed.naveed@aurea.com">
+  <ModulePrefs title="PMO JIRA Reopened Issues" author="Naveed Ahmed" description="Hello World example gadget" author_email="ahmed.naveed@aurea.com" height="150">
+    <Require feature="setprefs"/>
+    <Require feature="settitle"/>
+    <Require feature="dynamic-height"/>
+    <Require feature="views"/>
+    <Require feature="oauthpopup"/>
     <Require feature="minimessage" />
+    <Optional feature="atlassian.util"/>
+    <Optional feature="auth-refresh"/>
     <Optional feature="dynamic-height" />
   </ModulePrefs>
+  <OAuth>
+    <Service>
+      <Access url="https://pmo-jira.devfactory.com/plugins/servlet/oauth/access-token" method="POST"/>
+      <Request url="https://pmo-jira.devfactory.com/plugins/servlet/oauth/request-token" method="POST"/>
+      <Authorization url="https://pmo-jira.devfactory.com/plugins/servlet/oauth/authorize?oauth_callback=http%3A%2F%2Foauth.gmodules.com%2Fgadgets%2Foauthcallback"/>
+    </Service>
+  </OAuth>
+  <Locale messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/und/gadget.common"/>
+  <Locale lang="zh" country="CN" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/zh_CN/gadget.common"/>
+  <Locale lang="cs" country="CZ" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/cs_CZ/gadget.common"/>
+  <Locale lang="da" country="DK" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/da_DK/gadget.common"/>
+  <Locale lang="nl" country="NL" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/nl_NL/gadget.common"/>
+  <Locale lang="en" country="UK" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/en_UK/gadget.common"/>
+  <Locale lang="en" country="US" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/en_US/gadget.common"/>
+  <Locale lang="et" country="EE" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/et_EE/gadget.common"/>
+  <Locale lang="fi" country="FI" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/fi_FI/gadget.common"/>
+  <Locale lang="fr" country="FR" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/fr_FR/gadget.common"/>
+  <Locale lang="de" country="DE" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/de_DE/gadget.common"/>
+  <Locale lang="hu" country="HU" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/hu_HU/gadget.common"/>
+  <Locale lang="is" country="IS" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/is_IS/gadget.common"/>
+  <Locale lang="it" country="IT" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/it_IT/gadget.common"/>
+  <Locale lang="ja" country="JP" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/ja_JP/gadget.common"/>
+  <Locale lang="ko" country="KR" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/ko_KR/gadget.common"/>
+  <Locale lang="no" country="NO" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/no_NO/gadget.common"/>
+  <Locale lang="pl" country="PL" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/pl_PL/gadget.common"/>
+  <Locale lang="pt" country="BR" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/pt_BR/gadget.common"/>
+  <Locale lang="ro" country="RO" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/ro_RO/gadget.common"/>
+  <Locale lang="ru" country="RU" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/ru_RU/gadget.common"/>
+  <Locale lang="sk" country="SK" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/sk_SK/gadget.common"/>
+  <Locale lang="es" country="ES" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/es_ES/gadget.common"/>
+  <Locale lang="sv" country="SE" messages="https://pmo-jira.devfactory.com/rest/gadgets/1.0/g/messagebundle/sv_SE/gadget.common"/>
   <UserPref name="show_date" display_name="Show Dates?" datatype="bool" default_value="true"/>
-  <UserPref name="name" />
+  <UserPref name="name" display_name="Username" datatype="text" default_value="Name"/>
   <Content type="html">
      <![CDATA[ 
        <h1>Hello, world!</h1>
